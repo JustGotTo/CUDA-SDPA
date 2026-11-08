@@ -221,3 +221,13 @@ torch::Tensor attention (
 
 }
 
+PYBIND11_MODULE(TORCH_EXTENSION_NAME, m) {
+
+    m.def(
+        "attention",
+        &attention_cuda,
+        "Custom CUDA Scaled Dot Product Attention"
+    );
+
+}
+
